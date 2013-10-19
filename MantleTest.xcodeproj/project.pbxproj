@@ -21,6 +21,10 @@
 		0393C6321812EDBB00C1EDFF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0393C6141812EDBB00C1EDFF /* UIKit.framework */; };
 		0393C63A1812EDBB00C1EDFF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0393C6381812EDBB00C1EDFF /* InfoPlist.strings */; };
 		0393C63C1812EDBB00C1EDFF /* MantleTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0393C63B1812EDBB00C1EDFF /* MantleTestTests.m */; };
+		0393C6471812EE5A00C1EDFF /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0393C6451812EE5A00C1EDFF /* Model.xcdatamodeld */; };
+		0393C64A1812EF4800C1EDFF /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0393C6491812EF4800C1EDFF /* Photo.m */; };
+		0393C64D1812EF5500C1EDFF /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 0393C64C1812EF5500C1EDFF /* Album.m */; };
+		E38F381DF6004B57B10B4A51 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4C572B9BB34953B5EA8CDA /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,13 @@
 		0393C6371812EDBB00C1EDFF /* MantleTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MantleTestTests-Info.plist"; sourceTree = "<group>"; };
 		0393C6391812EDBB00C1EDFF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0393C63B1812EDBB00C1EDFF /* MantleTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MantleTestTests.m; sourceTree = "<group>"; };
+		0393C6461812EE5A00C1EDFF /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		0393C6481812EF4800C1EDFF /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		0393C6491812EF4800C1EDFF /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		0393C64B1812EF5500C1EDFF /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		0393C64C1812EF5500C1EDFF /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		5A8D042DCE79421BA1E4E374 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		EE4C572B9BB34953B5EA8CDA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +74,7 @@
 				0393C6131812EDBB00C1EDFF /* CoreGraphics.framework in Frameworks */,
 				0393C6151812EDBB00C1EDFF /* UIKit.framework in Frameworks */,
 				0393C6111812EDBB00C1EDFF /* Foundation.framework in Frameworks */,
+				E38F381DF6004B57B10B4A51 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +98,7 @@
 				0393C6351812EDBB00C1EDFF /* MantleTestTests */,
 				0393C60F1812EDBB00C1EDFF /* Frameworks */,
 				0393C60E1812EDBB00C1EDFF /* Products */,
+				5A8D042DCE79421BA1E4E374 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +118,7 @@
 				0393C6121812EDBB00C1EDFF /* CoreGraphics.framework */,
 				0393C6141812EDBB00C1EDFF /* UIKit.framework */,
 				0393C62F1812EDBB00C1EDFF /* XCTest.framework */,
+				EE4C572B9BB34953B5EA8CDA /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,6 +133,11 @@
 				0393C6261812EDBB00C1EDFF /* ViewController.m */,
 				0393C6281812EDBB00C1EDFF /* Images.xcassets */,
 				0393C6171812EDBB00C1EDFF /* Supporting Files */,
+				0393C6451812EE5A00C1EDFF /* Model.xcdatamodeld */,
+				0393C6481812EF4800C1EDFF /* Photo.h */,
+				0393C6491812EF4800C1EDFF /* Photo.m */,
+				0393C64B1812EF5500C1EDFF /* Album.h */,
+				0393C64C1812EF5500C1EDFF /* Album.m */,
 			);
 			path = MantleTest;
 			sourceTree = "<group>";
@@ -159,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0393C63F1812EDBB00C1EDFF /* Build configuration list for PBXNativeTarget "MantleTest" */;
 			buildPhases = (
+				53A4AD0480CC475091293FDE /* Check Pods Manifest.lock */,
 				0393C6091812EDBB00C1EDFF /* Sources */,
 				0393C60A1812EDBB00C1EDFF /* Frameworks */,
 				0393C60B1812EDBB00C1EDFF /* Resources */,
+				29CD570687C54D7E88246309 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,6 +265,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		29CD570687C54D7E88246309 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53A4AD0480CC475091293FDE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0393C6091812EDBB00C1EDFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -252,6 +306,9 @@
 				0393C6271812EDBB00C1EDFF /* ViewController.m in Sources */,
 				0393C6211812EDBB00C1EDFF /* AppDelegate.m in Sources */,
 				0393C61D1812EDBB00C1EDFF /* main.m in Sources */,
+				0393C64D1812EF5500C1EDFF /* Album.m in Sources */,
+				0393C64A1812EF4800C1EDFF /* Photo.m in Sources */,
+				0393C6471812EE5A00C1EDFF /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +432,7 @@
 		};
 		0393C6401812EDBB00C1EDFF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A8D042DCE79421BA1E4E374 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -388,6 +446,7 @@
 		};
 		0393C6411812EDBB00C1EDFF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A8D042DCE79421BA1E4E374 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -460,6 +519,7 @@
 				0393C6411812EDBB00C1EDFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0393C6421812EDBB00C1EDFF /* Build configuration list for PBXNativeTarget "MantleTestTests" */ = {
 			isa = XCConfigurationList;
@@ -468,8 +528,22 @@
 				0393C6441812EDBB00C1EDFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0393C6451812EE5A00C1EDFF /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0393C6461812EE5A00C1EDFF /* Model.xcdatamodel */,
+			);
+			currentVersion = 0393C6461812EE5A00C1EDFF /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0393C6051812EDBB00C1EDFF /* Project object */;
 }
