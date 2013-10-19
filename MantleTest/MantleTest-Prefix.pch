@@ -14,4 +14,5 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <Mantle.h>
+    #import <OGCoreDataStack.h>
 #endif

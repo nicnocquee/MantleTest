@@ -36,4 +36,24 @@
     return nil;
 }
 
++ (NSString *)managedObjectEntityName {
+    return @"NPRPhoto";
+}
+
++ (NSDictionary *)managedObjectKeysByPropertyKey {
+    return nil;
+}
+
++ (NSSet *)propertyKeysForManagedObjectUniquing {
+    return [NSSet setWithObject:@"photoId"];
+}
+
++ (NSValueTransformer *)urlEntityAttributeTransformer {
+    return [[self class] urlJSONTransformer];
+}
+
++ (NSDictionary *)relationshipModelClassesByPropertyKey {
+    return @{@"albums": [Album class]};
+}
+
 @end

@@ -8,7 +8,7 @@
 
 #import "MTLModel.h"
 
-@interface Photo : MTLModel <MTLJSONSerializing>
+@interface Photo : MTLModel <MTLJSONSerializing, MTLManagedObjectSerializing>
 
 @property (nonatomic, copy, readonly) NSString *photoId;
 @property (nonatomic, copy, readonly) NSURL *url;

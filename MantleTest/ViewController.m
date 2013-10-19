@@ -22,13 +22,29 @@
     [super viewDidLoad];
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    
+    // clear the persistent store
+    [NSPersistentStoreCoordinator clearPersistentStore];
 	
     NSError *error;
+    
+    // JSON serialization
     Album *album = [MTLJSONAdapter modelOfClass:[Album class] fromJSONDictionary:[self sampleDictionary] error:&error];
     
-    NSAssert(album!=nil, @"Album should not be nil");
+    if (error) {
+        NSLog(@"Error: %@", error);
+    }
     
-    [self.textView setText:album.description];
+    // Managed object serialization
+    NSManagedObject *albumManagedObject = [MTLManagedObjectAdapter managedObjectFromModel:album insertingIntoContext:[NSManagedObjectContext mainContext] error:&error];
+    [[NSManagedObjectContext mainContext] save];
+    NSLog(@"Album managed object = %@", albumManagedObject);
+    
+    // Check number of albums in core data
+    NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"NPRAlbum"];
+    NSUInteger count = [[NSManagedObjectContext mainContext] countForFetchRequest:request error:&error];
+    
+    NSAssert(count == 2, @"Expected 2 albums. Actual = %d", count);
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,7 +57,7 @@
     return @{@"albumId": @"1",
              @"name":@"Album name",
              @"cover": @{@"photoId": @"photo1",
-                         @"url": @"http://someurl.com",
+                         @"url": @"http://www.google.com",
                          @"albums":@[@"1", @"2"]
                              }
              };

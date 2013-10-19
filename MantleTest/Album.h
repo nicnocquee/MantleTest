@@ -10,7 +10,7 @@
 
 @class Photo;
 
-@interface Album : MTLModel <MTLJSONSerializing>
+@interface Album : MTLModel <MTLJSONSerializing, MTLManagedObjectSerializing>
 
 @property (nonatomic, copy, readonly) NSString *albumId;
 @property (nonatomic, copy, readonly) NSString *name;

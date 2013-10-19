@@ -8,7 +8,7 @@
     <entity name="NPRPhoto" syncable="YES">
         <attribute name="photoId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="albums" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NPRAlbum" syncable="YES"/>
+        <relationship name="albums" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NPRAlbum" syncable="YES"/>
     </entity>
     <elements>
         <element name="NPRAlbum" positionX="0" positionY="0" width="0" height="0"/>
